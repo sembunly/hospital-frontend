@@ -4,6 +4,7 @@ import AppHeader from "../components/AppHeader";
 import AppSidebar from "../components/AppSidebar";
 import { logout } from "../services/authService";
 import "../styles/dashboard.css";
+import "../styles/patients.css";
 
 function getStoredUser() {
   try {

@@ -22,7 +22,7 @@ React and Vite frontend for the Hospital Laravel Microservices project. It provi
 | Service | API URL |
 | --- | --- |
 | Authentication | `http://127.0.0.1:8001/api` |
-| Patient | `http://127.0.0.1:8002/api` |
+| Patient | `http://127.0.0.1:8081/api` |
 | OPD | `http://127.0.0.1:8003/api` |
 | Doctor consultation | `http://127.0.0.1:8004/api` |
 
@@ -57,6 +57,9 @@ npm run preview  # Preview the production build
 | --- | --- |
 | `/login` | Public |
 | `/dashboard` | Requires a token in local storage |
+| `/patients/register` | Register a patient |
+| `/patients` | List, edit, and delete patients |
+| `/patients/search` | Search patients |
 
 ## Project structure
 
