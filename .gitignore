@@ -1,0 +1,39 @@
+# Dependencies
+/node_modules/
+
+# Production build
+/dist/
+/dist-ssr/
+
+# Environment files and local secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# Logs and test output
+/logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+/coverage/
+
+# Vite cache
+/.vite/
+node_modules/.vite/
+
+# Editor and operating system files
+/.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+**/.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
