@@ -5,22 +5,33 @@ const menuGroups = [
   {
     label: "Patients",
     icon: "♙",
-    items: ["Register Patient", "Patient List", "Patient Search"],
+    items: [
+      { label: "Register Patient", to: "/patients/register" },
+      { label: "Patient List", to: "/patients" },
+      { label: "Patient Search", to: "/patients/search" },
+    ],
   },
   {
     label: "OPD",
     icon: "✚",
-    items: ["New OPD Visit", "OPD Queue", "Vital Signs"],
+    items: [
+      { label: "New OPD Visit" },
+      { label: "OPD Queue" },
+      { label: "Vital Signs" },
+    ],
   },
   {
     label: "Consultation",
     icon: "◉",
-    items: ["Waiting Patients", "Consultation History"],
+    items: [
+      { label: "Waiting Patients" },
+      { label: "Consultation History" },
+    ],
   },
   {
     label: "Administration",
     icon: "⚙",
-    items: ["Users", "Roles"],
+    items: [{ label: "Users" }, { label: "Roles" }],
   },
 ];
 
@@ -81,11 +92,25 @@ export default function AppSidebar({ isOpen, onClose, onLogout, loggingOut }) {
 
               {openMenu === group.label && (
                 <div className="sidebar-submenu">
-                  {group.items.map((item) => (
-                    <span className="sidebar-submenu-item" key={item}>
-                      {item}
-                    </span>
-                  ))}
+                  {group.items.map((item) =>
+                    item.to ? (
+                      <NavLink
+                        to={item.to}
+                        className={({ isActive }) =>
+                          `sidebar-submenu-item ${isActive ? "active" : ""}`
+                        }
+                        onClick={onClose}
+                        end={item.to === "/patients"}
+                        key={item.label}
+                      >
+                        {item.label}
+                      </NavLink>
+                    ) : (
+                      <span className="sidebar-submenu-item" key={item.label}>
+                        {item.label}
+                      </span>
+                    ),
+                  )}
                 </div>
               )}
             </div>

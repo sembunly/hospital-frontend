@@ -10,3 +10,12 @@ export const AUTH_ENDPOINTS = {
   LOGOUT: "/logout",
   ME: "/me",
 };
+
+export const PATIENT_ENDPOINTS = {
+  PATIENTS: "/patients",
+  ADDRESSES: "/addresses",
+};
+
+export const DOCTOR_ENDPOINTS = {
+  DOCTORS: "/doctors",
+};
