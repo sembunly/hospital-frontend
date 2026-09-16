@@ -37,3 +37,31 @@ export function deletePatient(patientId) {
     { method: "DELETE" },
   );
 }
+
+export function getProvinces() {
+  return apiRequest(
+    API_BASE_URLS.PATIENT,
+    `${PATIENT_ENDPOINTS.ADDRESSES}/provinces`,
+  );
+}
+
+export function getDistricts(provinceId) {
+  return apiRequest(
+    API_BASE_URLS.PATIENT,
+    `${PATIENT_ENDPOINTS.ADDRESSES}/provinces/${provinceId}/districts`,
+  );
+}
+
+export function getCommunes(districtId) {
+  return apiRequest(
+    API_BASE_URLS.PATIENT,
+    `${PATIENT_ENDPOINTS.ADDRESSES}/districts/${districtId}/communes`,
+  );
+}
+
+export function getVillages(communeId) {
+  return apiRequest(
+    API_BASE_URLS.PATIENT,
+    `${PATIENT_ENDPOINTS.ADDRESSES}/communes/${communeId}/villages`,
+  );
+}

@@ -6,6 +6,7 @@ import DefaultLayout from "./layouts/DefaultLayout";
 import PatientRegistrationPage from "./pages/patients/PatientRegistrationPage";
 import PatientListPage from "./pages/patients/PatientListPage";
 import PatientEditPage from "./pages/patients/PatientEditPage";
+import PatientViewPage from "./pages/patients/PatientViewPage";
 
 export default function App() {
   return (
@@ -63,6 +64,7 @@ export default function App() {
             </ProtectedRoute>
           }
         />
+        <Route path="/patients/:patientId" element={<ProtectedRoute><DefaultLayout pageTitle="Patient Details"><PatientViewPage /></DefaultLayout></ProtectedRoute>} />
       </Routes>
     </BrowserRouter>
   );
